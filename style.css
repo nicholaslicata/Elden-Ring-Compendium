@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --logo-font: 'EB Garamond', sans-serif;
+    --logo-color: #ab966f;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.main {
+    min-height: 95vh;
+    background-image: url('images/eldenringbg.jpg');
+    background-size: cover;
+}
+
+/* Navbar */
+
+.nav-header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    min-height: 5vh;
+    background-color: #000000;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute; 
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 75%;
+    transition: 0.5s ease-in;
+    gap: 20px;
+    border: 2px solid green;
+}
+
+.navbar-active {
+    right: 0;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    color: red;
+}
+
+.nav-button:hover {
+    cursor: pointer;
+}
+
+.hamburger-btn {
+    display: block;
+    z-index: 1;
+}
+
+.hamburger-btn:hover {
+    cursor: pointer;
+}
+
+.hamburger-line {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 5px auto;
+    background-color: black;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-family: var(--logo-font);
+    color: var(--logo-color);
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 320px) {
+    /* Main */
+    .main {
+        background-position: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    /* Navbar */
+    .nav-header {
+        align-items: center;
+    }
+
+    .navbar {
+        position: static;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .hamburger-btn {
+        display: none;
+    }
+
+    /* Main */
+    .main {
+        background-position: center;
+    }
+}
+
