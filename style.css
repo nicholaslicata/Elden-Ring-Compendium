@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Roboto&display=swap');
 
 * {
     margin: 0;
@@ -7,8 +7,11 @@
 }
 
 :root {
-    --logo-font: 'EB Garamond', sans-serif;
-    --logo-color: #ab966f;
+    --logo-font: 'EB Garamond', serif;
+    --logo-text-color: #ab966f;
+    --main-font: "Roboto", sans-serif;
+    --main-text-color: rgb(246, 243, 243);
+    --nav-background-color: #332F2E;
 }
 
 html, body {
@@ -18,9 +21,12 @@ html, body {
 }
 
 .main {
-    min-height: 95vh;
+    min-height: 92vh;
     background-image: url('images/eldenringbg.jpg');
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Navbar */
@@ -30,8 +36,8 @@ html, body {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    min-height: 5vh;
-    background-color: #000000;
+    min-height: 8vh;
+    background-color: var(--nav-background-color);
 }
 
 .navbar {
@@ -46,26 +52,34 @@ html, body {
     width: 75%;
     transition: 0.5s ease-in;
     gap: 20px;
-    border: 2px solid green;
+    background-color: var(--nav-background-color);
+    z-index: 1;
 }
 
 .navbar-active {
     right: 0;
+    width: 75%;
+    z-index: 1
 }
 
 .nav-button {
     background: none;
     border: none;
-    color: red;
+    font-family: var(--main-font);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--main-text-color);
+    padding: 0.5em 0;
 }
 
 .nav-button:hover {
     cursor: pointer;
+    border-bottom: 2px solid var(--logo-text-color);
 }
 
 .hamburger-btn {
     display: block;
-    z-index: 1;
+    z-index: 1
 }
 
 .hamburger-btn:hover {
@@ -75,15 +89,53 @@ html, body {
 .hamburger-line {
     display: block;
     width: 20px;
-    height: 2px;
-    margin: 5px auto;
-    background-color: black;
+    height: 2.5px;
+    margin: 3px auto;
+    background-color: var(--main-text-color);
 }
 
 .logo {
+    letter-spacing: 1px;
     font-size: 1.2rem;
     font-family: var(--logo-font);
-    color: var(--logo-color);
+    color: var(--logo-text-color);
+    background-color: var(--nav-background-color);
+    border: none;
+}
+
+
+.logo:hover {
+    cursor: pointer;
+}
+
+/* Home */
+
+.home-container {
+    width: 90%;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 1em;
+    background-color: var(--nav-background-color);
+    border: 2px solid var(--logo-text-color);
+    border-radius: 5px;
+    font-family: var(--main-font);
+    opacity: 0.8;
+}
+
+.home-header {
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: var(--logo-text-color);
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.home-p {
+    font-size: 1rem;
+    line-height: 1.4em;
+    color: var(--main-text-color);
+    text-align: left;
 }
 
 /* Media Queries */
@@ -96,9 +148,15 @@ html, body {
 }
 
 @media screen and (min-width: 768px) {
+     /* Main */
+     .main {
+        background-position: center;
+    }
+
     /* Navbar */
     .nav-header {
         align-items: center;
+        justify-content: space-around;
     }
 
     .navbar {
@@ -107,13 +165,49 @@ html, body {
         align-items: center;
     }
 
+    .nav-button {
+        font-size: 1rem;
+    }
+
     .hamburger-btn {
         display: none;
     }
 
-    /* Main */
-    .main {
-        background-position: center;
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    /* Home */
+    .home-container {
+        padding: 1.4em;
+    }
+
+    .home-header {
+        font-size: 2rem;
+    }
+
+    .home-p {
+        font-size: 1.6rem;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    /* Navbar */
+        .logo {
+        font-size: 1.6rem;
+    }
+
+    /* Home */
+    .home-container {
+        padding: 1.8em;
+    }
+    .home-header {
+        font-size: 3rem;
+    }
+
+    .home-p {
+        font-size: 1.8rem;
     }
 }
 
