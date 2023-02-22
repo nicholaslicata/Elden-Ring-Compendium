@@ -1,5 +1,6 @@
 
 function createNavbar() {
+    
     const navHeader = document.createElement('header');
     navHeader.classList.add('nav-header');
 
@@ -7,9 +8,9 @@ function createNavbar() {
     logoContainer.classList.add('logo-container');
     navHeader.appendChild(logoContainer);
 
-    const logo = document.createElement('h1');
+    const logo = document.createElement('button');
     logo.classList.add('logo');
-    logo.textContent = 'The Elden Ring Compendium';
+    logo.textContent = 'Elden Ring Compendium';
     logoContainer.appendChild(logo);
 
     const navBar = document.createElement('nav');
@@ -60,6 +61,19 @@ function createNavbar() {
         navBar.classList.toggle('navbar-active');
     })
 
+    const navButtons = [
+        bossesBtn,
+        creaturesBtn,
+        weaponsBtn,
+        armorsBtn,
+        itemsBtn,
+        locationsBtn,
+    ]
+    navButtons.forEach(button => button.addEventListener('click', function() {
+        if (navBar.classList.contains('navbar-active')) {
+            navBar.classList.remove('navbar-active');
+        }
+    }))
 
     return navHeader;
 }
