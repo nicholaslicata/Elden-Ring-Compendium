@@ -1,15 +1,21 @@
 {
   "name": "elden-ring-app",
   "version": "1.0.0",
+  "repository": {
+    "url": "git+https://github.com/WatchoutForGhosts/Elden-Ring-Compendium.git"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
   }
