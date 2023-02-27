@@ -1,5 +1,6 @@
 import renderHome from './home';
 import { renderBossesPage, getBossesData } from './bosses';
+import { renderCreaturesPage, getCreaturesData } from './creatures';
 
 function createNavbar() {
     const navHeader = document.createElement('header');
@@ -31,6 +32,10 @@ function createNavbar() {
     const creaturesBtn = document.createElement('button');
     creaturesBtn.classList.add('nav-button');
     creaturesBtn.textContent = 'Creatures';
+    creaturesBtn.addEventListener('click', function() {
+        getCreaturesData();
+        renderCreaturesPage();
+    })
     navBar.appendChild(creaturesBtn);
 
     const weaponsBtn = document.createElement('button');
