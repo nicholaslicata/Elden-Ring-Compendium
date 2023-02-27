@@ -1,6 +1,7 @@
+import renderHome from './home';
+import { renderBossesPage, getBossesData } from './bosses';
 
 function createNavbar() {
-    
     const navHeader = document.createElement('header');
     navHeader.classList.add('nav-header');
 
@@ -11,6 +12,7 @@ function createNavbar() {
     const logo = document.createElement('button');
     logo.classList.add('logo');
     logo.textContent = 'Elden Ring Compendium';
+    logo.addEventListener('click', renderHome);
     logoContainer.appendChild(logo);
 
     const navBar = document.createElement('nav');
@@ -20,6 +22,10 @@ function createNavbar() {
     const bossesBtn = document.createElement('button');
     bossesBtn.classList.add('nav-button');
     bossesBtn.textContent = 'Bosses';
+    bossesBtn.addEventListener('click', function() {
+        getBossesData();
+        renderBossesPage();
+    });
     navBar.appendChild(bossesBtn);
 
     const creaturesBtn = document.createElement('button');
