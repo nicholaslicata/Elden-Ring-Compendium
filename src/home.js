@@ -15,7 +15,7 @@ function createHome() {
     const homeP1 = document.createElement('p');
     homeP1.classList.add('home-p');
     homeP1.textContent = 'Welcome to the Elden Ring Compendium. Our goal is to provide the Tarnished of the Lands Between with a referential tool to assist in their journey to become Elden Lords.';
-    homeHeaderContainer.appendChild(homeP1);
+    homeHeader.appendChild(homeP1);
 
     return homeContainer;
 }
