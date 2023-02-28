@@ -1,6 +1,7 @@
 import renderHome from './home';
 import { renderBossesPage, getBossesData } from './bosses';
 import { renderCreaturesPage, getCreaturesData } from './creatures';
+import { renderWeaponsPage, getWeaponsData } from './weapons';
 
 function createNavbar() {
     const navHeader = document.createElement('header');
@@ -41,6 +42,10 @@ function createNavbar() {
     const weaponsBtn = document.createElement('button');
     weaponsBtn.classList.add('nav-button');
     weaponsBtn.textContent = 'Weapons';
+    weaponsBtn.addEventListener('click', function() {
+        getWeaponsData();
+        renderWeaponsPage();
+    })
     navBar.appendChild(weaponsBtn);
 
     const armorsBtn = document.createElement('button');
