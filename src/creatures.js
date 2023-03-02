@@ -33,7 +33,7 @@ function createInputAndButton() {
     })
     inputContainer.appendChild(creaturesButton);
 
-    document.addEventListener('keyup', function(e) {
+    creaturesInput.addEventListener('keyup', function(e) {
         if (e.keyCode === 13) {
             main.textContent = '';
             validateInput(creaturesInput, creaturesInput)
