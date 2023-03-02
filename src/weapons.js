@@ -35,7 +35,7 @@ function createInputAndButton() {
     })
     inputContainer.appendChild(weaponsButton);
 
-    document.addEventListener('keyup', function(e) {
+    weaponsInput.addEventListener('keyup', function(e) {
         if (e.keyCode === 13) {
             main.textContent = '';
             validateInput(weaponsInput, weaponsInput)
