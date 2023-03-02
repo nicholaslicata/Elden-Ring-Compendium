@@ -33,7 +33,7 @@ function createInputAndButton() {
     })
     inputContainer.appendChild(bossesButton);
 
-    document.addEventListener('keyup', function(e) {
+    bossesInput.addEventListener('keyup', function(e) {
         if (e.keyCode === 13) {
             main.textContent = '';
             validateInput(bossesInput, bossesInput)
