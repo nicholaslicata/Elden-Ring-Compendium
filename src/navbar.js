@@ -3,6 +3,7 @@ import { renderBossesPage, getBossesData } from './bosses';
 import { renderCreaturesPage, getCreaturesData } from './creatures';
 import { renderWeaponsPage, getWeaponsData } from './weapons';
 import { renderArmorsPage, getArmorsData } from './armors';
+import { renderItemsPage, getItemsData } from './items';
 
 function createNavbar() {
     const navHeader = document.createElement('header');
@@ -61,6 +62,10 @@ function createNavbar() {
     const itemsBtn = document.createElement('button');
     itemsBtn.classList.add('nav-button');
     itemsBtn.textContent = 'Items';
+    itemsBtn.addEventListener('click', function() {
+        getItemsData();
+        renderItemsPage();
+    })
     navBar.appendChild(itemsBtn);
 
     const locationsBtn = document.createElement('button');
