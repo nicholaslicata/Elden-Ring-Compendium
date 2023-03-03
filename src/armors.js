@@ -7,8 +7,6 @@ async function getArmorsData() {
         const armorData = await response.json();
         const allArmors = armorData.data;
         allArmors.map(armor => createArmors(armor));
-        console.log(armorData);
-        console.log(allArmors);
     } catch (error) {
         console.log(error);
     }
@@ -128,7 +126,7 @@ function createArmors(data) {
     const main = document.querySelector('main');
 
     const armorContainer = document.createElement('div');
-    armorContainer.classList.add('boss-container');
+    armorContainer.classList.add('armor-container');
     main.appendChild(armorContainer);
 
     const armorImg = document.createElement('img');
