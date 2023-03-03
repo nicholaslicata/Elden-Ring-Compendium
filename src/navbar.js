@@ -4,6 +4,7 @@ import { renderCreaturesPage, getCreaturesData } from './creatures';
 import { renderWeaponsPage, getWeaponsData } from './weapons';
 import { renderArmorsPage, getArmorsData } from './armors';
 import { renderItemsPage, getItemsData } from './items';
+import { renderLocationsPage, getLocationsData } from './locations';
 
 function createNavbar() {
     const navHeader = document.createElement('header');
@@ -71,6 +72,10 @@ function createNavbar() {
     const locationsBtn = document.createElement('button');
     locationsBtn.classList.add('nav-button');
     locationsBtn.textContent = 'Locations';
+    locationsBtn.addEventListener('click', function() {
+        getLocationsData();
+        renderLocationsPage();
+    })
     navBar.appendChild(locationsBtn);
 
     const hamburgerBtn = document.createElement('div');
