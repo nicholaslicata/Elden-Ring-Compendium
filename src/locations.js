@@ -81,7 +81,7 @@ function createPageButtons() {
 async function pageSelection(index) {
     const main = document.querySelector('main');
 
-    const api = `https://eldenring.fanapis.com/api/locations?limit=60&page=${index}`;
+    const api = `https://eldenring.fanapis.com/api/locations?limit=20&page=${index}`;
     
     try {
         const response = await fetch(api, {mode: 'cors'});
