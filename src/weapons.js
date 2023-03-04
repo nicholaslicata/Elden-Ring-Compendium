@@ -7,8 +7,6 @@ async function getWeaponsData() {
         const weaponData = await response.json();
         const allWeapons = weaponData.data;
         allWeapons.map(weapon  => createWeapons(weapon));
-        console.log(weaponData);
-        console.log(allWeapons);
     } catch (error) {
         console.log(error);
     }
