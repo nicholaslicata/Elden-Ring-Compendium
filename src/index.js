@@ -1,7 +1,7 @@
 import createNavbar from './navbar';
 import renderHome from './home';
 
-function createMain(e) {
+function createMain() {
     const main = document.createElement('main');
     main.classList.add('main');
 
