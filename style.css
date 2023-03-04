@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+.main-white-bg {
+    background-color: white;
+}
+
 :root {
     --logo-font: 'EB Garamond', serif;
     --logo-text-color: #ab966f;
@@ -21,15 +25,29 @@ html, body {
     position: relative;
 }
 
+body:before {
+    content: '';
+    position: fixed; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background: url(images/eldenringbg.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .main {
     min-height: 92vh;
+    width: 100vw;
     background-image: url('images/eldenringbg.jpg');
-    /* background-size: cover; 
-    background-attachment: fixed; */
-    background-position: center;
+    background-attachment: fixed; 
     background-size: cover;
-    background-repeat: no-repeat;
-    position: fixed;
+    background-position: center;
+    background-repeat: no-repeat; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -175,7 +193,6 @@ html, body {
     font-family: var(--main-font);
     color: var(--main-text-color);
     background-color: var(--nav-background-color);
-    opacity: 0.8;
 }
 
 .boss-img {
