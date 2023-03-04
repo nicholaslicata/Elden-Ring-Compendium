@@ -24,8 +24,12 @@ html, body {
 .main {
     min-height: 92vh;
     background-image: url('images/eldenringbg.jpg');
-    background-size: cover; 
-    background-attachment: fixed;
+    /* background-size: cover; 
+    background-attachment: fixed; */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -265,7 +269,7 @@ html, body {
     padding: 0.5em;
     display: flex;
     justify-content: center;
-    gap: 2em;
+    gap: 0.5em;
 }
 
 .boss-page-button {
@@ -389,7 +393,7 @@ html, body {
     padding: 0.5em;
     display: flex;
     justify-content: center;
-    gap: 2em;
+    gap: 0.5em;
 }
 
 .creature-page-button {
@@ -513,7 +517,7 @@ html, body {
     padding: 0.5em;
     display: flex;
     justify-content: center;
-    gap: 2em;
+    gap: 0.5em;
 }
 
 .weapon-page-button {
@@ -637,7 +641,7 @@ html, body {
     padding: 0.5em;
     display: flex;
     justify-content: center;
-    gap: 2em;
+    gap: 0.5em;
 }
 
 .armor-page-button {
@@ -761,7 +765,7 @@ html, body {
     padding: 0.5em;
     display: flex;
     justify-content: center;
-    gap: 2em;
+    gap: 0.5em;
 }
 
 .item-page-button {
@@ -885,7 +889,7 @@ html, body {
     padding: 0.5em;
     display: flex;
     justify-content: center;
-    gap: 2em;
+    gap: 0.5em;
 }
 
 .location-page-button {
@@ -908,11 +912,10 @@ html, body {
 
 @media screen and (min-width: 320px) {
     /* Main */
-    .main {
+    /* .main {
         background-position: center;
         background-size: 100% 100%;
-        align-content: center;
-    }
+    } */
 }
 
 @media screen and (min-width: 690px) {
@@ -1227,6 +1230,12 @@ html, body {
 }
 
 @media screen and (min-width: 1024px) {
+    /* Main */
+    .main {
+    background-size: cover; 
+    background-attachment: fixed;
+    }
+
     /* Navbar */
         .logo {
         font-size: 1.6rem;
@@ -1331,6 +1340,11 @@ html, body {
     .error-message {
         font-size: 1.6rem;
         line-height: 1.6em;
+    }
+
+    /* Page Buttons */
+    .page-buttons-container {
+        gap: 2em;
     }
 }
 
