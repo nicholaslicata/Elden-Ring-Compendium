@@ -25,7 +25,7 @@ html, body {
     position: relative;
 }
 
-main:before {
+main::before {
     content: '';
     position: fixed; 
     left: 0;
@@ -43,11 +43,11 @@ main:before {
 .main {
     min-height: 92vh;
     width: 100vw;
-    /* background-image: url('images/eldenringbg.jpg');
-    background-attachment: fixed; 
-    background-size: cover;
+    /* background-image: url('images/eldenringbg.jpg');  */
+    /* background-attachment: fixed;  */
+    /* background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;  */
+    background-repeat: no-repeat;   */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -944,7 +944,6 @@ main:before {
 @media screen and (min-width: 768px) {
      /* Main */
      .main {
-        background-position: center;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-start;
@@ -1248,10 +1247,10 @@ main:before {
 
 @media screen and (min-width: 1024px) {
     /* Main */
-    .main {
+    /* .main {
     background-size: cover; 
     background-attachment: fixed;
-    }
+    } */
 
     /* Navbar */
         .logo {
