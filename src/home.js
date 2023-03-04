@@ -23,10 +23,6 @@ function createHome() {
 function renderHome() {
     const main = document.querySelector('main');
     main.textContent = '';
-    // main.style.backgroundImage = 'url(images/eldenringbg.jpg)';
-    // main.style.backgroundAttachment = 'fixed';
-    // main.style.backgroundSize = 'cover';
-    // main.style.backgroundPosition = 'center'
 
     main.appendChild(createHome());
 }
