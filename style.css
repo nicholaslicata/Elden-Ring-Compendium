@@ -910,7 +910,8 @@ html, body {
     /* Main */
     .main {
         background-position: center;
-        background-attachment: inital;
+        background-size: auto 100%;
+        background-attachment: fixed;
     }
 }
 
