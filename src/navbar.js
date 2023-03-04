@@ -7,6 +7,7 @@ import { renderItemsPage, getItemsData } from './items';
 import { renderLocationsPage, getLocationsData } from './locations';
 
 function createNavbar() {
+
     const navHeader = document.createElement('header');
     navHeader.classList.add('nav-header');
 
