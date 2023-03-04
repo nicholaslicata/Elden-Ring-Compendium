@@ -161,9 +161,6 @@ function renderBossesPage() {
 
     createInputAndButton();
     createPageButtons();
-
-    // main.style.background = 'none';
-    // main.style.backgroundColor = 'black';
 }
 
 
