@@ -43,11 +43,11 @@ body:before {
 .main {
     min-height: 92vh;
     width: 100vw;
-    background-image: url('images/eldenringbg.jpg');
+    /* background-image: url('images/eldenringbg.jpg');
     background-attachment: fixed; 
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;  */
     display: flex;
     flex-direction: column;
     justify-content: center;
