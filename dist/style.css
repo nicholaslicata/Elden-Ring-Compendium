@@ -910,6 +910,7 @@ html, body {
     /* Main */
     .main {
         background-position: center;
+        background-attachment: inital;
     }
 }
 
