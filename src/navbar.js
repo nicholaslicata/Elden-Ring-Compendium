@@ -91,23 +91,41 @@ function createNavbar() {
 
     hamburgerBtn.addEventListener('click', function() {
         navBar.classList.toggle('navbar-active');
+            preventScroll(navBar, 'navbar-active');
     })
 
-    const navButtons = [
+   const navButtons = [
         bossesBtn,
         creaturesBtn,
         weaponsBtn,
         armorsBtn,
         itemsBtn,
         locationsBtn,
+        logo,
     ]
     navButtons.forEach(button => button.addEventListener('click', function() {
         if (navBar.classList.contains('navbar-active')) {
             navBar.classList.remove('navbar-active');
+            preventScroll(navBar, 'navbar-active');
         }
     }))
 
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768){
+            navBar.classList.remove('navbar-active');
+            document.body.classList.remove('body-no-scroll');
+        }
+    })
+
     return navHeader;
+}
+
+function preventScroll(element, className) {
+    if (element.classList.contains(className) && window.innerWidth < 768) {
+        document.body.classList.add('body-no-scroll')
+    } else {
+        document.body.classList.remove('body-no-scroll');
+    }
 }
 
 
