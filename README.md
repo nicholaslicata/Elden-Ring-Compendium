@@ -2,4 +2,4 @@ A website dedicated to the video game Elden Ring made with HTML, CSS, Javascript
 
 View project in browser. 
 
-https://watchoutforghosts.github.io/Elden-Ring-Compendium/
+https://nicholaslicata.github.io/Elden-Ring-Compendium/
