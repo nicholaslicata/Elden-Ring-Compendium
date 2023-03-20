@@ -2,7 +2,7 @@
   "name": "elden-ring-app",
   "version": "1.0.0",
   "repository": {
-    "url": "git+https://github.com/WatchoutForGhosts/Elden-Ring-Compendium.git"
+    "url": "git+https://github.com/nicholaslicata/Elden-Ring-Compendium.git"
   },
   "description": "",
   "main": "index.js",
