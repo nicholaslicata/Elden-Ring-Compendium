@@ -6,6 +6,7 @@ async function getBossesData() {
         const response = await fetch(api, {mode: 'cors'});
         const bossData = await response.json();
         const allBosses = bossData.data;
+        // Render bosses
         allBosses.map(boss => createBosses(boss));
     } catch (error) {
         console.log(error);
@@ -34,6 +35,7 @@ function createInputAndButton() {
     inputContainer.appendChild(bossesButton);
 
     bossesInput.addEventListener('keyup', function(e) {
+        // Run input validation when enter button pressed
         if (e.keyCode === 13) {
             main.textContent = '';
             validateInput(bossesInput, bossesInput)
@@ -44,6 +46,7 @@ function createInputAndButton() {
 function validateInput(input, search) {
     const main = document.querySelector('main');
 
+    // Render error message if input empty
     if (input.value === '') {
         createInputAndButton();
         createPageButtons();
@@ -54,6 +57,7 @@ function validateInput(input, search) {
         bossSearchError.classList.add('boss-search-error');
         bossSearchError.textContent = 'Please enter a name so we know what to search for.'
         bossSearchErrorContainer.appendChild(bossSearchError);
+        // Run search if input valid
       } else {
         searchBosses(search.value);
     }
@@ -66,6 +70,7 @@ function createPageButtons() {
     pageButtonsContainer.classList.add('page-buttons-container');
     main.appendChild(pageButtonsContainer);
 
+    // Handle pagination for boss data
     for (let i = 0; i < 5; i++) {
         const pageButton = document.createElement('button');
         pageButton.classList.add('boss-page-button');
@@ -89,6 +94,7 @@ async function pageSelection(index) {
         main.textContent = '';
         createInputAndButton();
         createPageButtons();
+        // Render bosses per page number selection
         pageOfBosses.map(page => createBosses(page));
     
     } catch(error) {
@@ -101,6 +107,7 @@ async function searchBosses(searchQuery) {
 
     const main = document.querySelector('main');
 
+    // Render single boss if user query valid
     try {
         const response = await fetch(api, {mode: 'cors'});
         const bossData = await response.json();
@@ -108,6 +115,7 @@ async function searchBosses(searchQuery) {
         createInputAndButton();
         createPageButtons();
         createBosses(singleBoss);
+        // Render error message if no match for user query
     } catch(error) {
         main.textContent = '';
         createInputAndButton();
@@ -131,6 +139,7 @@ function createBosses(data) {
 
     const bossImg = document.createElement('img');
     bossImg.src = data.image;
+    // If no image for boss render this image
     if (!data.image) {
         bossImg.src = 'images/noimage.jpg';
     }
