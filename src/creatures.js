@@ -6,6 +6,7 @@ async function getCreaturesData() {
         const response = await fetch(api, {mode: 'cors'});
         const creatureData = await response.json();
         const allCreatures = creatureData.data;
+        // Render creatures
         allCreatures.map(creature => createCreatures(creature));
     } catch (error) {
         console.log(error);
@@ -34,6 +35,7 @@ function createInputAndButton() {
     inputContainer.appendChild(creaturesButton);
 
     creaturesInput.addEventListener('keyup', function(e) {
+        // Run input validation when enter button pressed
         if (e.keyCode === 13) {
             main.textContent = '';
             validateInput(creaturesInput, creaturesInput)
@@ -44,6 +46,7 @@ function createInputAndButton() {
 function validateInput(input, search) {
     const main = document.querySelector('main');
 
+    // Render error message if input empty
     if (input.value === '') {
         createInputAndButton();
         createPageButtons();
@@ -54,6 +57,7 @@ function validateInput(input, search) {
         creatureSearchError.classList.add('creature-search-error');
         creatureSearchError.textContent = 'Please enter a name so we know what to search for.'
         creatureSearchErrorContainer.appendChild(creatureSearchError);
+        // Run search if input valid
       } else {
         searchCreatures(search.value);
     }
@@ -66,6 +70,7 @@ function createPageButtons() {
     pageButtonsContainer.classList.add('page-buttons-container');
     main.appendChild(pageButtonsContainer);
 
+    // Handle pagination for creature data
     for (let i = 0; i < 6; i++) {
         const pageButton = document.createElement('button');
         pageButton.classList.add('creature-page-button');
@@ -89,6 +94,7 @@ async function pageSelection(index) {
         main.textContent = '';
         createInputAndButton();
         createPageButtons();
+        // Render creatures per page number selection
         pageOfCreatures.map(page => createCreatures(page));
     
     } catch(error) {
@@ -101,6 +107,7 @@ async function searchCreatures(searchQuery) {
 
     const main = document.querySelector('main');
 
+    // Render single creature if user query valid
     try {
         const response = await fetch(api, {mode: 'cors'});
         const creatureData = await response.json();
@@ -108,6 +115,7 @@ async function searchCreatures(searchQuery) {
         createInputAndButton();
         createPageButtons();
         createCreatures(singleCreature);
+        // Render error message if no match for usery query
     } catch(error) {
         main.textContent = '';
         createInputAndButton();
@@ -131,6 +139,7 @@ function createCreatures(data) {
 
     const creatureImg = document.createElement('img');
     creatureImg.src = data.image;
+    // If no image for creature render this image
     if (!data.image) {
         creatureImg.src = 'images/noimage.jpg';
     }
