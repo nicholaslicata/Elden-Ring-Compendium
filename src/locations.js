@@ -6,6 +6,7 @@ async function getLocationsData() {
         const response = await fetch(api, {mode: 'cors'});
         const locationData = await response.json();
         const allLocations = locationData.data;
+        // Render locations
         allLocations.map(location => createLocations(location));
     } catch (error) {
         console.log(error);
@@ -34,6 +35,7 @@ function createInputAndButton() {
     inputContainer.appendChild(locationsButton);
 
     locationsInput.addEventListener('keyup', function(e) {
+        // Run input validation when enter button pressed
         if (e.keyCode === 13) {
             main.textContent = '';
             validateInput(locationsInput, locationsInput)
@@ -44,6 +46,7 @@ function createInputAndButton() {
 function validateInput(input, search) {
     const main = document.querySelector('main');
 
+    // Render error message if input empty
     if (input.value === '') {
         createInputAndButton();
         createPageButtons();
@@ -54,6 +57,7 @@ function validateInput(input, search) {
         locationSearchError.classList.add('location-search-error');
         locationSearchError.textContent = 'Please enter a name so we know what to search for.'
         locationSearchErrorContainer.appendChild(locationSearchError);
+         // Run search if input valid
       } else {
         searchLocations(search.value);
     }
@@ -67,6 +71,7 @@ function createPageButtons() {
     pageButtonsContainer.classList.add('page-buttons-container');
     main.appendChild(pageButtonsContainer);
 
+    // Handle pagination for location data
     for (let i = 0; i < 6; i++) {
         const pageButton = document.createElement('button');
         pageButton.classList.add('location-page-button');
@@ -90,6 +95,7 @@ async function pageSelection(index) {
         main.textContent = '';
         createInputAndButton();
         createPageButtons();
+        // Render locations per page number selection
         pageOfLocations.map(page => createLocations(page));
     
     } catch(error) {
@@ -102,6 +108,7 @@ async function searchLocations(searchQuery) {
 
     const main = document.querySelector('main');
 
+    // Render single location if user query valid
     try {
         const response = await fetch(api, {mode: 'cors'});
         const locationData = await response.json();
@@ -109,6 +116,7 @@ async function searchLocations(searchQuery) {
         createInputAndButton();
         createPageButtons();
         createLocations(singleLocation);
+        // Render error message if no match for usery query
     } catch(error) {
         main.textContent = '';
         createInputAndButton();
@@ -132,6 +140,7 @@ function createLocations(data) {
 
     const locationImg = document.createElement('img');
     locationImg.src = data.image;
+    // If no image for location render this image
     if (!data.image) {
         locationImg.src = 'images/noimage.jpg';
     }
