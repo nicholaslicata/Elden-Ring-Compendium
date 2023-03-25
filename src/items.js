@@ -6,6 +6,7 @@ async function getItemsData() {
         const response = await fetch(api, {mode: 'cors'});
         const itemData = await response.json();
         const allItems = itemData.data;
+        // Render items
         allItems.map(item => createItems(item));
     } catch (error) {
         console.log(error);
@@ -34,6 +35,7 @@ function createInputAndButton() {
     inputContainer.appendChild(itemsButton);
 
     itemsInput.addEventListener('keyup', function(e) {
+        // Run input validation when enter button pressed
         if (e.keyCode === 13) {
             main.textContent = '';
             validateInput(itemsInput, itemsInput)
@@ -44,6 +46,7 @@ function createInputAndButton() {
 function validateInput(input, search) {
     const main = document.querySelector('main');
 
+    // Render error message if input empty
     if (input.value === '') {
         createInputAndButton();
         createPageButtons();
@@ -54,6 +57,7 @@ function validateInput(input, search) {
         itemSearchError.classList.add('item-search-error');
         itemSearchError.textContent = 'Please enter a name so we know what to search for.'
         itemSearchErrorContainer.appendChild(itemSearchError);
+        // Run search if input valid
       } else {
         searchItems(search.value);
     }
@@ -66,6 +70,7 @@ function createPageButtons() {
     pageButtonsContainer.classList.add('page-buttons-container');
     main.appendChild(pageButtonsContainer);
 
+    // Handle pagination for item data
     for (let i = 0; i < 10; i++) {
         const pageButton = document.createElement('button');
         pageButton.classList.add('item-page-button');
@@ -89,6 +94,7 @@ async function pageSelection(index) {
         main.textContent = '';
         createInputAndButton();
         createPageButtons();
+        // Render items per page number selection
         pageOfItems.map(page => createItems(page));
     
     } catch(error) {
@@ -101,6 +107,7 @@ async function searchItems(searchQuery) {
 
     const main = document.querySelector('main');
 
+    // Render single item if user query valid
     try {
         const response = await fetch(api, {mode: 'cors'});
         const itemData = await response.json();
@@ -108,6 +115,7 @@ async function searchItems(searchQuery) {
         createInputAndButton();
         createPageButtons();
         createItems(singleItem);
+        // Render error message if no match for user query
     } catch(error) {
         main.textContent = '';
         createInputAndButton();
@@ -131,6 +139,7 @@ function createItems(data) {
 
     const itemImg = document.createElement('img');
     itemImg.src = data.image;
+    // If no image for item render this image
     if (!data.image) {
         itemImg.src = 'images/noimage.jpg';
     }
