@@ -6,6 +6,7 @@ async function getArmorsData() {
         const response = await fetch(api, {mode: 'cors'});
         const armorData = await response.json();
         const allArmors = armorData.data;
+        // Render armors
         allArmors.map(armor => createArmors(armor));
     } catch (error) {
         console.log(error);
@@ -34,6 +35,7 @@ function createInputAndButton() {
     inputContainer.appendChild(armorsButton);
 
     armorsInput.addEventListener('keyup', function(e) {
+        // Run input validation when enter button pressed
         if (e.keyCode === 13) {
             main.textContent = '';
             validateInput(armorsInput, armorsInput)
@@ -44,6 +46,7 @@ function createInputAndButton() {
 function validateInput(input, search) {
     const main = document.querySelector('main');
 
+    // Render error message if input empty
     if (input.value === '') {
         createInputAndButton();
         createPageButtons();
@@ -54,6 +57,7 @@ function validateInput(input, search) {
         armorSearchError.classList.add('armor-search-error');
         armorSearchError.textContent = 'Please enter a name so we know what to search for.'
         armorSearchErrorContainer.appendChild(armorSearchError);
+        // Run search if input valid
       } else {
         searchArmors(search.value);
     }
@@ -66,6 +70,7 @@ function createPageButtons() {
     pageButtonsContainer.classList.add('page-buttons-container');
     main.appendChild(pageButtonsContainer);
 
+    // Handle pagination for armor data
     for (let i = 0; i < 10; i++) {
         const pageButton = document.createElement('button');
         pageButton.classList.add('armor-page-button');
@@ -89,6 +94,7 @@ async function pageSelection(index) {
         main.textContent = '';
         createInputAndButton();
         createPageButtons();
+        // Render armors per page number selection
         pageOfArmors.map(page => createArmors(page));
     
     } catch(error) {
@@ -101,6 +107,7 @@ async function searchArmors(searchQuery) {
 
     const main = document.querySelector('main');
 
+    // Render single armor is user query valid
     try {
         const response = await fetch(api, {mode: 'cors'});
         const armorData = await response.json();
@@ -108,6 +115,7 @@ async function searchArmors(searchQuery) {
         createInputAndButton();
         createPageButtons();
         createArmors(singleArmor);
+        // Render error message if no match for user query
     } catch(error) {
         main.textContent = '';
         createInputAndButton();
@@ -131,6 +139,7 @@ function createArmors(data) {
 
     const armorImg = document.createElement('img');
     armorImg.src = data.image;
+    // If no image for armor render this image
     if (!data.image) {
         armorImg.src = 'images/noimage.jpg';
     }
