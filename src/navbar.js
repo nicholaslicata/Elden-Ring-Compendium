@@ -83,6 +83,7 @@ function createNavbar() {
     hamburgerBtn.classList.add('hamburger-btn');
     navHeader.appendChild(hamburgerBtn);
 
+    // Render 3 lines for hamburger button
     for (let i = 0; i < 3; i++) {
         const hamburgerLine = document.createElement('div');
         hamburgerLine.classList.add('hamburger-line');
@@ -90,6 +91,7 @@ function createNavbar() {
     }
 
     hamburgerBtn.addEventListener('click', function() {
+        // Add/remove active class for mobile nav when clicked
         navBar.classList.toggle('navbar-active');
             preventScroll(navBar, 'navbar-active');
     })
@@ -103,7 +105,9 @@ function createNavbar() {
         locationsBtn,
         logo,
     ]
+
     navButtons.forEach(button => button.addEventListener('click', function() {
+        // Close mobile nav when a link is clicked
         if (navBar.classList.contains('navbar-active')) {
             navBar.classList.remove('navbar-active');
             preventScroll(navBar, 'navbar-active');
@@ -111,6 +115,7 @@ function createNavbar() {
     }))
 
     window.addEventListener('resize', function() {
+        // Close mobile nav if window size increase above 768px
         if (window.innerWidth > 768){
             navBar.classList.remove('navbar-active');
             document.body.classList.remove('body-no-scroll');
