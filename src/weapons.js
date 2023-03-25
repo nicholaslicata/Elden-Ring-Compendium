@@ -6,6 +6,7 @@ async function getWeaponsData() {
         const response = await fetch(api, {mode: 'cors'});
         const weaponData = await response.json();
         const allWeapons = weaponData.data;
+        // Render weapons
         allWeapons.map(weapon  => createWeapons(weapon));
     } catch (error) {
         console.log(error);
@@ -34,6 +35,7 @@ function createInputAndButton() {
     inputContainer.appendChild(weaponsButton);
 
     weaponsInput.addEventListener('keyup', function(e) {
+        // Run input validation when enter button pressed
         if (e.keyCode === 13) {
             main.textContent = '';
             validateInput(weaponsInput, weaponsInput)
@@ -44,6 +46,7 @@ function createInputAndButton() {
 function validateInput(input, search) {
     const main = document.querySelector('main');
 
+    // Render error message if input empty
     if (input.value === '') {
         createInputAndButton();
         createPageButtons();
@@ -54,6 +57,7 @@ function validateInput(input, search) {
         weaponSearchError.classList.add('weapon-search-error');
         weaponSearchError.textContent = 'Please enter a name so we know what to search for.'
         weaponSearchErrorContainer.appendChild(weaponSearchError);
+        // Run search if input valid
       } else {
         searchWeapons(search.value);
     }
@@ -66,6 +70,7 @@ function createPageButtons() {
     pageButtonsContainer.classList.add('page-buttons-container');
     main.appendChild(pageButtonsContainer);
 
+    // Handle pagination for weapon data
     for (let i = 0; i < 8; i++) {
         const pageButton = document.createElement('button');
         pageButton.classList.add('weapon-page-button');
@@ -89,6 +94,7 @@ async function pageSelection(index) {
         main.textContent = '';
         createInputAndButton();
         createPageButtons();
+        // Render weapons per page number selection
         pageOfWeapons.map(page => createWeapons(page));
     
     } catch(error) {
@@ -101,6 +107,7 @@ async function searchWeapons(searchQuery) {
 
     const main = document.querySelector('main');
 
+    // Render single weapon if user query valid
     try {
         const response = await fetch(api, {mode: 'cors'});
         const weaponData = await response.json();
@@ -108,6 +115,7 @@ async function searchWeapons(searchQuery) {
         createInputAndButton();
         createPageButtons();
         createWeapons(singleWeapon);
+        // Render error message if no match for user query
     } catch(error) {
         main.textContent = '';
         createInputAndButton();
@@ -131,6 +139,7 @@ function createWeapons(data) {
 
     const weaponImg = document.createElement('img');
     weaponImg.src = data.image;
+    // If no image for weapon render this image
     if (!data.image) {
         weaponImg.src = 'images/noimage.jpg';
     }
