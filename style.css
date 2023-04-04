@@ -188,11 +188,13 @@ main::before {
     width: 90%;
     margin: 0 auto;
     margin-top: 1em;
+    margin-bottom: 1em;
     border-radius: 5px;
     border: 2px solid var(--logo-text-color);
     font-family: var(--main-font);
     color: var(--main-text-color);
     background-color: var(--nav-background-color);
+    align-self: stretch;
 }
 
 .boss-img {
@@ -255,6 +257,7 @@ main::before {
     opacity: 0.8;
     color: var(--main-text-color);
     font-family: var(--main-font);
+    font-size: 1rem;
 }
 
 .bosses-button:hover {
@@ -295,6 +298,7 @@ main::before {
     font-weight: 700;
     font-family: var(--main-font);
     border: 2px solid var(--logo-text-color);
+    border-radius: 5px;
     background: var(--nav-background-color);
     padding: 0.2em;
     opacity: 0.8;
@@ -318,6 +322,7 @@ main::before {
     color: var(--main-text-color);
     background-color: var(--nav-background-color);
     opacity: 0.8;
+    align-self: stretch;
 }
 
 .creature-img {
@@ -380,6 +385,7 @@ main::before {
     opacity: 0.8;
     color: var(--main-text-color);
     font-family: var(--main-font);
+    font-size: 1rem;
 }
 
 .creatures-button:hover {
@@ -420,6 +426,7 @@ main::before {
     font-weight: 700;
     font-family: var(--main-font);
     border: 2px solid var(--logo-text-color);
+    border-radius: 5px;
     background: var(--nav-background-color);
     padding: 0.2em;
     opacity: 0.8;
@@ -443,6 +450,7 @@ main::before {
     color: var(--main-text-color);
     background-color: var(--nav-background-color);
     opacity: 0.8;
+    align-self: stretch;
 }
 
 .weapon-img {
@@ -505,6 +513,7 @@ main::before {
     opacity: 0.8;
     color: var(--main-text-color);
     font-family: var(--main-font);
+    font-size: 1rem;
 }
 
 .weapons-button:hover {
@@ -545,6 +554,7 @@ main::before {
     font-weight: 700;
     font-family: var(--main-font);
     border: 2px solid var(--logo-text-color);
+    border-radius: 5px;
     background: var(--nav-background-color);
     padding: 0.2em;
     opacity: 0.8;
@@ -568,6 +578,7 @@ main::before {
     color: var(--main-text-color);
     background-color: var(--nav-background-color);
     opacity: 0.8;
+    align-self: stretch;
 }
 
 .armor-img {
@@ -630,6 +641,7 @@ main::before {
     opacity: 0.8;
     color: var(--main-text-color);
     font-family: var(--main-font);
+    font-size: 1rem;
 }
 
 .armors-button:hover {
@@ -670,6 +682,7 @@ main::before {
     font-weight: 700;
     font-family: var(--main-font);
     border: 2px solid var(--logo-text-color);
+    border-radius: 5px;
     background: var(--nav-background-color);
     padding: 0.2em;
     opacity: 0.8;
@@ -693,6 +706,7 @@ main::before {
     color: var(--main-text-color);
     background-color: var(--nav-background-color);
     opacity: 0.8;
+    align-self: stretch;
 }
 
 .item-img {
@@ -755,6 +769,7 @@ main::before {
     opacity: 0.8;
     color: var(--main-text-color);
     font-family: var(--main-font);
+    font-size: 1rem;
 }
 
 .items-button:hover {
@@ -795,6 +810,7 @@ main::before {
     font-weight: 700;
     font-family: var(--main-font);
     border: 2px solid var(--logo-text-color);
+    border-radius: 5px;
     background: var(--nav-background-color);
     padding: 0.2em;
     opacity: 0.8;
@@ -818,6 +834,7 @@ main::before {
     color: var(--main-text-color);
     background-color: var(--nav-background-color);
     opacity: 0.8;
+    align-self: stretch;
 }
 
 .location-img {
@@ -880,6 +897,7 @@ main::before {
     opacity: 0.8;
     color: var(--main-text-color);
     font-family: var(--main-font);
+    font-size: 1rem;
 }
 
 .locations-button:hover {
@@ -920,6 +938,7 @@ main::before {
     font-weight: 700;
     font-family: var(--main-font);
     border: 2px solid var(--logo-text-color);
+    border-radius: 5px;
     background: var(--nav-background-color);
     padding: 0.2em;
     opacity: 0.8;
