@@ -230,6 +230,7 @@ main::before {
     max-width: 1000px;
     display: flex;
     margin: 0 auto;
+    margin-top: 0.5em;
     justify-content: space-around;
     padding: 0.5em 0;
 }
@@ -290,12 +291,12 @@ main::before {
 }
 
 .boss-page-button {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     font-weight: 700;
     font-family: var(--main-font);
     border: 2px solid var(--logo-text-color);
     background: var(--nav-background-color);
-    padding: 0.1em;
+    padding: 0.2em;
     opacity: 0.8;
     color: var(--main-text-color);
 }
@@ -354,6 +355,7 @@ main::before {
     max-width: 1000px;
     display: flex;
     margin: 0 auto;
+    margin-top: 0.5em;
     justify-content: space-around;
     padding: 0.5em 0;
 }
@@ -414,12 +416,12 @@ main::before {
 }
 
 .creature-page-button {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     font-weight: 700;
     font-family: var(--main-font);
     border: 2px solid var(--logo-text-color);
     background: var(--nav-background-color);
-    padding: 0.1em;
+    padding: 0.2em;
     opacity: 0.8;
     color: var(--main-text-color);
 }
@@ -478,6 +480,7 @@ main::before {
     max-width: 1000px;
     display: flex;
     margin: 0 auto;
+    margin-top: 0.5em;
     justify-content: space-around;
     padding: 0.5em 0;
 }
@@ -538,12 +541,12 @@ main::before {
 }
 
 .weapon-page-button {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     font-weight: 700;
     font-family: var(--main-font);
     border: 2px solid var(--logo-text-color);
     background: var(--nav-background-color);
-    padding: 0.1em;
+    padding: 0.2em;
     opacity: 0.8;
     color: var(--main-text-color);
 }
@@ -602,6 +605,7 @@ main::before {
     max-width: 1000px;
     display: flex;
     margin: 0 auto;
+    margin-top: 0.5em;
     justify-content: space-around;
     padding: 0.5em 0;
 }
@@ -662,12 +666,12 @@ main::before {
 }
 
 .armor-page-button {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     font-weight: 700;
     font-family: var(--main-font);
     border: 2px solid var(--logo-text-color);
     background: var(--nav-background-color);
-    padding: 0.1em;
+    padding: 0.2em;
     opacity: 0.8;
     color: var(--main-text-color);
 }
@@ -726,6 +730,7 @@ main::before {
     max-width: 1000px;
     display: flex;
     margin: 0 auto;
+    margin-top: 0.5em;
     justify-content: space-around;
     padding: 0.5em 0;
 }
@@ -786,12 +791,12 @@ main::before {
 }
 
 .item-page-button {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     font-weight: 700;
     font-family: var(--main-font);
     border: 2px solid var(--logo-text-color);
     background: var(--nav-background-color);
-    padding: 0.1em;
+    padding: 0.2em;
     opacity: 0.8;
     color: var(--main-text-color);
 }
@@ -850,6 +855,7 @@ main::before {
     max-width: 1000px;
     display: flex;
     margin: 0 auto;
+    margin-top: 0.5em;
     justify-content: space-around;
     padding: 0.5em 0;
 }
@@ -910,12 +916,12 @@ main::before {
 }
 
 .location-page-button {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     font-weight: 700;
     font-family: var(--main-font);
     border: 2px solid var(--logo-text-color);
     background: var(--nav-background-color);
-    padding: 0.1em;
+    padding: 0.2em;
     opacity: 0.8;
     color: var(--main-text-color);
 }
