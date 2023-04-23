@@ -316,6 +316,7 @@ main::before {
     width: 90%;
     margin: 0 auto;
     margin-top: 1em;
+    margin-bottom: 1em;
     border-radius: 5px;
     border: 2px solid var(--logo-text-color);
     font-family: var(--main-font);
@@ -444,6 +445,7 @@ main::before {
     width: 90%;
     margin: 0 auto;
     margin-top: 1em;
+    margin-bottom: 1em;
     border-radius: 5px;
     border: 2px solid var(--logo-text-color);
     font-family: var(--main-font);
@@ -572,6 +574,7 @@ main::before {
     width: 90%;
     margin: 0 auto;
     margin-top: 1em;
+    margin-bottom: 1em;
     border-radius: 5px;
     border: 2px solid var(--logo-text-color);
     font-family: var(--main-font);
@@ -700,6 +703,7 @@ main::before {
     width: 90%;
     margin: 0 auto;
     margin-top: 1em;
+    margin-bottom: 1em;
     border-radius: 5px;
     border: 2px solid var(--logo-text-color);
     font-family: var(--main-font);
@@ -828,6 +832,7 @@ main::before {
     width: 90%;
     margin: 0 auto;
     margin-top: 1em;
+    margin-bottom: 1em;
     border-radius: 5px;
     border: 2px solid var(--logo-text-color);
     font-family: var(--main-font);
